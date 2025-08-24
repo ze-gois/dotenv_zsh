@@ -1,0 +1,4 @@
+private/zsh_history
+system/backup/*
+user/backup/*
+root/backup/*

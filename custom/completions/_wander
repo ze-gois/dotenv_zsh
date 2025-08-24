@@ -1,0 +1,9 @@
+#compdef wander
+
+_wander() {
+  local -a projects
+  projects=(${(f)"$(find ${WANDER_DIR:-$HOME/back/lang/rust/wander} -mindepth 1 -maxdepth 2 -type d -printf '%P\n' 2>/dev/null)"})
+
+  _describe 'projects' projects
+}
+

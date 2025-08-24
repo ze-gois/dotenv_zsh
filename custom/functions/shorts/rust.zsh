@@ -1,0 +1,3 @@
+cr() {
+    clear && cargo run
+}
