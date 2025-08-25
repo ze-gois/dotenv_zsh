@@ -38,7 +38,7 @@ install(){
         link_with_backup "/etc/zsh/$file" \
                         "$DOTENV_ZSH_DIR/system/$file" \
                         "$DOTENV_ZSH_DIR/system/backup"
-        sudo chown -h "$ORIGINAL_USER":"$(id -gn "$ORIGINAL_USER")" "$ORIGINAL_HOME/.$file"
+        # sudo chown -h "$ORIGINAL_USER":"$(id -gn "$ORIGINAL_USER")" "$ORIGINAL_HOME/.$file"
     done
 
     # Root
@@ -46,6 +46,6 @@ install(){
         link_with_backup "/root/.$file" \
                         "$DOTENV_ZSH_DIR/root/.$file" \
                         "$DOTENV_ZSH_DIR/root/backup"
-        sudo chown -h "$ORIGINAL_USER":"$(id -gn "$ORIGINAL_USER")" "$ORIGINAL_HOME/.$file"
+        # sudo chown -h "$ORIGINAL_USER":"$(id -gn "$ORIGINAL_USER")" "$ORIGINAL_HOME/.$file"
     done
 }
