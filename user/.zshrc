@@ -26,7 +26,7 @@ source $ZSH/oh-my-zsh.sh
 
 chpath p $BACKUP_PATH/lang/sh/bin
 chpath a $HOME/.local/bin
-
+# export BROWSER="firefox --new-window"
 # wander-prefill() {
 #   local arg="$1"
 #   BUFFER="wander $arg"
