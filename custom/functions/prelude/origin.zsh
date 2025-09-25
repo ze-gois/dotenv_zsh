@@ -1,21 +1,11 @@
+# Função para obter o caminho real de um arquivo, resolvendo symlinks
 origin() {
-    SOURCE="$1"
-    while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
-      TARGET="$(readlink "$SOURCE")"
-      if [[ $TARGET == /* ]]; then
-        # echo "SOURCE '$SOURCE' is an absolute symlink to '$TARGET'"
-        SOURCE="$TARGET"
-        echo "$TARGET"
-      else
-        DIR="$( dirname "$SOURCE" )"
-        # echo "SOURCE '$SOURCE' is a relative symlink to '$TARGET' (relative to '$DIR')"
-        SOURCE="$DIR/$TARGET" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
-        echo "$SOURCE"
-      fi
-    done
+    [[ -e "$1" ]] || return 1      # verifica se o arquivo existe
+    readlink -f "$1"                # -f resolve todos os symlinks e retorna o caminho absoluto
 }
 
+# Função para obter o script Zsh atual resolvendo symlinks
 current() {
-    CURRENT_ZSHRC="${(%):-%x}"
-    echo "$(realpath $(origin $CURRENT_ZSHRC))"
+    local script="${(%):-%x}"       # caminho do script atual
+    origin "$script"
 }
