@@ -3,10 +3,6 @@ current() {
     echo "$(realpath $CURRENT_ZSH_FILE)"
 }
 
-export BACKUP_PATH="/backup"
-export DOTENV_PATH=$BACKUP_PATH/dotenv
-export DOTENV_ZSH_PATH=$DOTENV_PATH/zsh
-
 export HISTFILE=$DOTENV_ZSH_PATH/private/zsh_history
 
 source $DOTENV_ZSH_PATH/custom/functions/prelude/source.zsh
@@ -26,6 +22,7 @@ source $ZSH/oh-my-zsh.sh
 
 chpath p $BACKUP_PATH/lang/sh/bin
 chpath a $HOME/.local/bin
+
 # export BROWSER="firefox --new-window"
 # wander-prefill() {
 #   local arg="$1"
