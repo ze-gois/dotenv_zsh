@@ -9,6 +9,7 @@ source $DOTENV_ZSH_PATH/custom/functions/prelude/source.zsh
 
 source_batch $DOTENV_ZSH_PATH/custom/functions/prelude
 source_batch $DOTENV_ZSH_PATH/custom/functions/shorts
+source_batch $DOTENV_ZSH_PATH/custom/functions/scripts
 
 plugins=(git rust ssh-agent)
 
